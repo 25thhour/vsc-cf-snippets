@@ -1,0 +1,12 @@
+{% for snippet in snippetList | reverse %}
+{%- set name = snippet.data.name -%}
+{%- set prefix = snippet.data.prefix -%}
+{%- set content = snippet.templateContent -%}
+{%- set description = snippet.data.description -%}
+
+{% include "snippet.njk" %}
+
+{%- if not loop.last -%}
+,
+{% endif %}
+{% endfor %}

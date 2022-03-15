@@ -1,0 +1,17 @@
+---
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - helpers
+permalink: "/snippets/{{ tag }}.json"
+---
+
+{%- set snippetList = collections [ tag ] -%}
+{
+{% if snippetList.length %}
+  {%- include "snippet-list.njk" -%}
+{% endif -%}
+}

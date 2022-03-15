@@ -1,0 +1,13 @@
+"{{ name }}": {
+  "prefix": {% if (prefix | isArray) -%}[
+    {%- for item in prefix -%}
+      "{{ item }}"{% if not loop.last %}, {% endif -%}
+    {% endfor %}]
+    {%- else -%}
+    "{{ prefix }}"
+    {%- endif -%},
+  "body": [
+    {% formatSnippetBody content, indent %}
+  ],
+  "description": "{{ description }}"
+}

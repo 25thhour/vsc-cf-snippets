@@ -1,0 +1,12 @@
+---
+permalink: helpers.code-snippets
+---
+{%- set snippetList = collections.helpers -%}
+{
+  // This file was generated automatically from the snippets in the `./src/helpers/*` directory
+  // and copied to ./.vscode/helpers.code-snippets at build time.
+
+{% if snippetList.length %}
+  {%- include "snippet-list.njk" -%}
+{% endif %}
+}
