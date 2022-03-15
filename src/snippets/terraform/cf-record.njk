@@ -1,0 +1,13 @@
+---
+name: Cloudflare Record
+prefix: cf:record
+description: Create a Cloudflare DNS Record
+---
+
+resource "cloudflare_record" "$1" {
+  zone_id = $2
+  type = "${3|A,AAAA,CNAME,HTTPS,TXT,SRV,LOC,MX,NS,CERT,DNSKEY,DS,NAPTR,SMIMEA,SSHFP,SVCB,TLSA,URI|}"
+  name = "$4"
+  value = "$5"
+}
+$0
